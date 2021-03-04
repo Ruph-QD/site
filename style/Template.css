@@ -1,0 +1,28 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    border: solid;
+    align-items: center;
+}
+.image{
+    object-fit: contain;
+    max-width: auto;
+    width: auto;
+}
+.image-infinite{
+    max-height: 4.3rem;
+    height: 4.3rem;
+}
+.image-user{
+    max-height: 3.5rem;
+    height: 3.5rem;
+}
+body{
+    background-color: lightblue;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-around;
+}
