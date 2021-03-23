@@ -1,0 +1,28 @@
+.container-first, .container-second{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-row: column gap 0px;
+    padding: 5px 55px 5px 55px;
+}
+
+table{
+    border-collapse: collapse;
+    background-color:rgb(194, 195, 212); 
+    background-position: center;
+    color: white;
+    opacity: 0.8;
+}
+caption{
+    border: 2px solid dodgerblue;
+    border-bottom: initial;
+    background-image: linear-gradient(90deg, rgb(164, 173, 185), rgb(132, 156, 235));
+}
+td, th{
+    border: 1px solid blue;
+    border-top: initial;
+}
+td[data-titre_colonne="Prix"] {
+    text-align: center;
+}
+tr:last-child{
+    border: 2px solid dodgerblue;}
