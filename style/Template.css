@@ -1,4 +1,4 @@
-.head{
+.main-navigation{
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -8,35 +8,33 @@
     margin-top: 0rem;
     padding-left: 0rem;
 }
-.head:hover{
+.main-navigation:hover{
     margin-top: auto;
     height: 6rem;
 }
-.head li .text:hover{
-    padding: 2rem;
-    display: block;
+.navigation-element:hover{
     font-size: 1.5rem;
 }
-.image{
+.logo-image{
     object-fit: contain;
     max-width: auto;
     width: auto;
 }
-.image-user:hover{
-    max-height: 5rem;
-    height: 5rem;
-}
-.image-infinite:hover{
-    max-height: 6rem;
-    height: 6rem;
-}
-.image-infinite{
+.logo-image-infinite{
     max-height: 4.3rem;
     height: 4.3rem;
 }
-.image-user{
+.logo-image-infinite:hover{
+    max-height: 6rem;
+    height: 6rem;
+}
+.logo-image-user{
     max-height: 3.5rem;
     height: 3.5rem;
+}
+.logo-image-user:hover{
+    max-height: 5rem;
+    height: 5rem;
 }
 body{
     background-color: lightblue;
