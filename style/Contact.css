@@ -1,0 +1,42 @@
+.input-field,
+select,
+textarea {
+    width: 50rem;
+    padding: 0.75rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    resize: vertical
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-align: end;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+    border-radius: 0.5rem;
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    margin: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+
+.titre {
+    margin: auto;
+}

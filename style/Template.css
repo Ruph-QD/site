@@ -1,4 +1,4 @@
-.main-navigation{
+.main-navigation {
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -8,39 +8,42 @@
     margin-top: 0rem;
     padding-left: 0rem;
 }
-.main-navigation:hover{
-    margin-top: auto;
-    height: 6rem;
-}
-.navigation-element:hover{
+
+.navigation-element:hover {
     font-size: 1.5rem;
 }
-.logo-image{
+
+.logo-image {
     object-fit: contain;
     max-width: auto;
     width: auto;
 }
-.logo-image-infinite{
+
+.logo-image-infinite {
     max-height: 4.3rem;
     height: 4.3rem;
 }
-.logo-image-infinite:hover{
+
+.logo-image-infinite:hover {
     max-height: 6rem;
     height: 6rem;
 }
-.logo-image-user{
+
+.logo-image-user {
     max-height: 3.5rem;
     height: 3.5rem;
 }
-.logo-image-user:hover{
+
+.logo-image-user:hover {
     max-height: 5rem;
     height: 5rem;
 }
-body{
+
+body {
     background-color: lightblue;
 }
 
-.foot{
+.foot {
     display: flex;
     justify-content: space-around;
 }
