@@ -1,0 +1,216 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-bottom-color: black;
+  border-bottom-style: solid;  
+  height: 80px; 
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px; 
+  margin-top: 0px;
+  border-bottom: black;
+  border-bottom-style: solid;
+}
+
+.profilCoureur {
+  display: flex;
+  flex-direction: column;
+  border-top-style: solid;  
+  border-left-style: solid;   
+  border-right-style: solid;   
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  height: 580px;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  border-top-style: solid;  
+  border-left-style: solid;   
+  border-right-style: solid;  
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.profilPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-right: solid;
+}
+
+.pic {
+  width: 150px;
+  border-color: black;
+  border-style: solid;
+}
+
+.button {
+  padding: 4px;
+  font-size: 15px;
+  margin: 12px 5px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid; 
+  border-radius: 5%;
+}
+
+.userInformations {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(205, 236, 255);
+}
+
+input[type=text] {
+  width: 150px;
+  height: 25px;
+  border-width: 2px;
+  margin-left: 25px;
+  margin-bottom: 1px;
+  padding: 5px;
+}
+
+.coureurs {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5%;
+  margin-left: 25px;
+  width: 164px;
+}
+
+.listeCoureurs {
+  position: relative;
+  display: inline-block;
+}
+
+.coureur-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.coureur-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.coureur-content a:hover {
+  background-color: #ddd;
+}
+
+.listeCoureurs:hover .coureur-content {
+  display: block;
+}
+
+.listeCoureurs:hover .coureurs {
+  background-color: #ddd;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  border-bottom-style: solid;
+}
+
+.stats h4 {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.stats p{
+  margin-left: 10px;
+  margin-top: 0px;
+}
+
+.tests {
+  border-bottom-style: solid;
+  height: 180px;
+}
+
+.tests h4 {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.mesTests {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.faits {
+  display: flex;
+  width: 100%;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-left-style: solid;
+  height: 100px;
+}
+
+.faits h5 {
+  margin-left: 10px;
+  margin-top: 10px;
+  
+}
+
+.avenir {
+  display: flex;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+}
+
+.avenir h5 {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.envoieProfil {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  background-color: rgb(205, 236, 255);
+  }
+
+  
