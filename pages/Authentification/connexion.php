@@ -9,7 +9,6 @@
   
     <body>
     
-       
     
        <div class="main">
            <div class="left_aside"></div>
