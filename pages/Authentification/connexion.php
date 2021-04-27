@@ -24,7 +24,7 @@
               <input type="submit"/>
               <input type="reset"/><br/><br/>
               <a href="forgottenpass">Mot de passe oublié</a><br/><br/>
-              <a href="accountcreation">Créer un compte</a>
+              <a href="../pagecoureur.php">se connecter</a>
             </fieldset>
             </form>
             </div>
