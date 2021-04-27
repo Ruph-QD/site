@@ -14,23 +14,23 @@
 <body>
   <div class="slideshow-container">
 
-    <div class="mySlides fade">
+    <div class="slide fade">
       <img class="image" src="../assets/images/image_runner-1.png">
       <div class="text"></div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="slide fade">
       <img class="image" src="../assets/images/image_runner-2.png">
       <div class="text"></div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="slide fade">
       <img class="image" src="../assets/images/image_runner-3.png">
       <div class="text"></div>
     </div>
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <a class="prev" onclick="jumpSlide(false)">&#10094;</a>
+    <a class="next" onclick="jumpSlide(true)">&#10095;</a>
   </div>
   <br>
 

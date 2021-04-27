@@ -6,7 +6,7 @@
   text-align: center;
   object-fit: contain;
   width: 31.25rem;
-  height: 40rem;
+  height: 20rem;
 }
 
 .slideshow-container {
@@ -15,10 +15,6 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-}
-
-.mySlides {
-  display: none;
 }
 
 .prev,
@@ -68,9 +64,12 @@
   transition: background-color 0.6s ease;
 }
 
-.active,
 .dot:hover {
   background-color: #717171;
+}
+
+.slide {
+  display: none;
 }
 
 .fade {
