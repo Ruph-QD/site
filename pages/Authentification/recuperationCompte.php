@@ -16,25 +16,21 @@
     
 $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
 
-      if(isset($_POST['formConnect'])){
+      if(isset($_POST['formrecuperer'])){
 
-      if(isset($_POST['email']) AND isset($_POST['mdpass'])){
+      if(isset($_POST['email'])){
 
           $email=htmlspecialchars($_POST['email']);
-          $mdpass=sha1($_POST['mdpass']);
-
-          
-
-          if(!empty($_POST['email']) AND !empty($_POST['mdpass'])){
+     
+          if(!empty($_POST['email']) ){
 
                 if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 
                  
 
-                    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE email= :email AND mdpass= :mdpass');
+                    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE email= :email ');
                     $requser->execute(array(
-                        'email' =>$email,
-                        'mdpass' => $mdpass
+                        'email' =>$email
                     
                         ));
                     $userexist=$requser->rowCount();
@@ -43,11 +39,28 @@ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
                         $userinfo=$requser->fetch();
                         $_SESSION['id']=$userinfo['id'];
                         $_SESSION['pseudo']=$userinfo['pseudo'];
-                        header('Location:profil.php?id='.$_SESSION['id']);
-                        $erreur="tout va bien";
+                        $_SESSION['email']=$userinfo['email'];
+                        $recup_code=" ";
+                        for($i=0;$i<8;$i++){
+                          $recup_code.=mt_rand(0,9);
+                        }
+
+                        $_SESSION['recup_code']=$recup_code;
+
+                      
+                        $recup_insert = $bdd->prepare('INSERT INTO recuperation(code, email) VALUES(:code, :email)');
+                        $recup_insert->execute(array(
+                            'code' => $recup_code,
+                            'email' =>$email
+                       
+                            ));
+                        
+                        var_dump($recup_code);
+                       
+                        
 
                     }else{
-                        $erreur="les parametres fournis ne correspondent pas. Veuillez verifier!";
+                        $erreur="l email fourni n'existe ne correspondent pas. Veuillez verifier!";
                     }
                     
                 }else{
@@ -69,22 +82,19 @@ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
            <div class="left_aside"></div>
            <div class="connect">
           
-            <form action="./connexion.php" method="post">
+            <form action="./recuperationCompte.php" method="post">
             <fieldset>
-            <h1>Login</h1>
+            <h1>Recuperation du mot de passe!</h1>
               <label class="texte " for="ftitle">Email <em>*</em>:</label><br/>
               <input type="email" id="logemail" name="email" placeholder="Email"><br/><br/>
-              <label class="texte " for="ftitle">Password <em>*</em>:</label>
-              <input type="password" id="logpassword" name="mdpass" placeholder="Password"><br/><br/>
-              <input type="submit" name="formConnect"/>
+              <input type="submit" name="formrecuperer"/>
               <input type="reset"/><br/><br/>
               <?php
                 if(isset($erreur)){
                     echo '<font color="red">'.$erreur.'</font><br/>';
                 }
              ?>
-              <a href="recuperationCompte.php">Mot de passe oublié</a><br/><br/>
-              <a href="enregistrement.php">Creer un compte!</a>
+            
             </fieldset>
             </form>
             </div>
