@@ -1,0 +1,40 @@
+.container-navigation{
+    position: fixed;
+    left: 0;
+    top: 20vh;
+    width: 11rem;
+    border: solid 0.16rem;
+    border-color: grey;
+    border-radius: 0.3rem;
+    margin-left: 1.1rem;
+    padding: 3rem 0rem 3rem 0.4rem;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+}
+.navigation a{
+    font-size: 1.2rem;
+    color: rgb(61, 57, 57);
+}
+
+.main-container{
+    margin-left : 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-question{
+    background-color: azure;
+    margin-top: 4rem;
+    margin-right: 3rem;
+    padding: 0.3rem 1.5rem 0.5rem 1.5rem;
+    box-shadow: 2px 6px 6px 6px rgba(42, 42, 240, 0.2);
+}
+
+.titre{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: -2.5rem;
+}

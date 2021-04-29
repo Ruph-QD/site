@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="../style/Contact.css" />
 </head>
 
+<header>
+    <?php include("./Component/Header.php"); ?>
+</header>
+
 <body> 
 
 <div><a href="" class="navigation-element">effectuer un programme</a></div>
@@ -12,3 +16,7 @@
 
 
 </body>
+
+<footer>
+    <?php include("./Component/Footer.php"); ?>
+</footer>
