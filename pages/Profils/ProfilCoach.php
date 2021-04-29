@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../../style/Template.css" />
         <link rel="stylesheet" href="../../style/Profil.css" />
-        <link rel="stylesheet" href="../../style/navbar.css" />
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
     <header>
-        <div class="topnav">
-            <div class="navigationButton">
-                <a class="active" href="#home"><img class="imageLogo"src="../../assets/images/infinite-mesures.png"></a>
-                <a href="#news">Forum</a>
-                <a href="#contact">FAQ</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">A Propos</a>
-                <a href="/ProfilAdmin.html"><img class="imageLogo" src="../../assets/images/logo_user.png"></a>
-            </div>
-          </div>
+        <?php include("../Component/Header.php"); ?>
     </header>
     <body>
 
@@ -61,11 +52,7 @@
         </div>
     </body>
 	<footer>
-        <div class="footer">
-            <!-- TODO: mettre les liens pour les pages -->            
-            <p><a href="">Conditions Générales d'utilisation</a></p>
-            <p>Powered by <a href="">Runnest</a></p>
-        </div>
+        <?php include("./Component/Footer.php"); ?>
     </footer>
 	
 </html>

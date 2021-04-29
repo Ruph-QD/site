@@ -8,6 +8,10 @@
         <title>Runnest</title>
     </head>
 
+    <header>
+      <?php include("./Component/Header.php"); ?>
+    </header>
+
     <body>
         <div class="wraper">
         <div class="AsideL section"></div>
@@ -61,12 +65,8 @@
           <div class="AsideR section"></div>
 		</div>
     </body>
-	<footer>
-        <div class="foot">
-            <!-- TODO: mettre les liens pour les pages -->            
-            <p><a href="">Conditions Générales d'utilisation</a></p>
-            <p>Powered by <a href="">Runnest</a></p>
-        </div>
+    <footer>
+        <?php include("./Component/Footer.php"); ?>
     </footer>
 	
 </html>
