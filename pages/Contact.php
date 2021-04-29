@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="../style/Contact.css" />
 </head>
 
+<header>
+  <?php include("./Component/Header.php"); ?>
+</header>
+
 <body>
     <div class="main-container">
         <div>
@@ -49,3 +53,9 @@
             </form>
         </div>
     </div>
+
+    <footer>
+  <?php include("./Component/Footer.php"); ?>
+    </footer>
+
+</html>
