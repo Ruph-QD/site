@@ -7,17 +7,7 @@
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
-    <header>
-        <ul class="head">
-            <!-- TODO: mettre les liens pour les pages -->
-            <li><a href="Accueil.html"><img class="image image-infinite"src="../assets/images/infinite_mesures.png"></a></li>
-            <li><a href="" class="text">Forum</a></li>
-            <li><a href="" class="text">FAQ</a></li>
-            <li><a href="" class="text">Contact</a></li>
-            <li><a href="" class="text">A Propos</a></li>
-            <li><a href=""><img class="image image-user" src="../assets/images/logo_user.png"></a></li>
-        </ul>
-    </header>
+
     <body>
         <div class="wraper">
         <div class="AsideL section"></div>

@@ -9,6 +9,7 @@ if(isset($_POST['formInscription'])){
     $prenom = htmlspecialchars($_POST['prenom']);
     $password = sha1($_POST['password']);
     $password_retype = sha1($_POST['password_retype']);
+    $role=htmlspecialchars($_POST['roleuser']);
      echo "ok!";
      if(!empty($_POST['pseudo'] AND $_POST['email'] AND $_POST['prenom'] AND $_POST['password'] AND $_POST['password_retype'])){
 
@@ -24,12 +25,13 @@ if(isset($_POST['formInscription'])){
                  
                   
                    
-                    $req = $bdd->prepare('INSERT INTO utilisateur(pseudo, mdpass,prenom,email) VALUES(:pseudo, :mdpass,:prenom,:email)');
+                    $req = $bdd->prepare('INSERT INTO utilisateur(pseudo, mdpass,prenom,email,roleuser) VALUES(:pseudo, :mdpass,:prenom,:email, :roleuser)');
 $req->execute(array(
 	'pseudo' => $pseudo,
 	'mdpass' => $password,
     'email' =>$email,
-    'prenom' => $prenom
+    'prenom' => $prenom,
+    'roleuser' => $role
 
 	));
 
@@ -61,6 +63,7 @@ $req->execute(array(
 
      }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,11 +98,12 @@ $req->execute(array(
               <label class="texte " for="ftitle">Email <em>*</em>:</label><br/>
               <input type="email" id="logemail" name="email" placeholder="Email"  value="<?php if(isset($email)){ echo $email;}?>"><br/><br/>
               <label class="texte " for="ftitle">Rôle <em>*</em>:</label><br/>
-              <select>
-                  <option>Coach</option>
-                  <option>Coureur</option>
-                  <option>Admin</option>
+              <select name='roleuser' value='coach'>
+                  <option value='coach'>Coach</option>
+                  <option value='coureur'>Coureur</option>
+                  <option value='admin'>Admin</option>
               </select><br/><br/>
+
               <label class="texte " for="ftitle">Password <em>*</em>:</label>
               <input type="password" id="logpassword" name="password" placeholder="Password"><br/><br/>
               <label class="texte " for="ftitle">Confirmer le Password <em>*</em>:</label>

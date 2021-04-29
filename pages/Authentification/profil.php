@@ -33,7 +33,20 @@ if(isset($_GET['id']) AND $_GET['id']>0 ){
           
             <form action="./connexion.php" method="post">
            
-            <h1>Profil de <?php echo $userinfo['pseudo']; ?> </h1>
+            <h1>Profil du <?php echo $userinfo['roleuser'] ; echo "    " ;echo $userinfo['pseudo'];
+             if($userinfo['roleuser']=='coureur'){
+                include("./../../pages/Profils/ProfilCoureur.php"); 
+             }else{
+                 if($userinfo['roleuser']=='admin'){
+                    include("./../../pages/Profils/ProfilAdmin.php");  
+                 }else{
+                     if($userinfo['roleuser']=='coach'){
+                        include("./../../pages/Profils/ProfilCoach.php");   
+                     }
+                 }
+             }
+
+            ?> </h1>
              
         
             email=  <?php echo $userinfo['email']; ?>
