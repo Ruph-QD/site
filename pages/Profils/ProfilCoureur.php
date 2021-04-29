@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../../style/Template.css" />
         <link rel="stylesheet" href="../../style/Profil.css" />
-        <link rel="stylesheet" href="../../style/navbar.css" />
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
     <header>
-        <?php include("./Component/Header.php"); ?>
+        <?php include("../Component/Header.php"); ?>
     </header>
     <body>
         <div class="profilCoureur">

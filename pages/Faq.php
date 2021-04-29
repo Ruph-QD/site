@@ -19,9 +19,13 @@
             <div><a href="#question-1">Créer un compte</a></div>
             <div><a href="#question-2">Se connecter à son compte</a></div>
             <div><a href="#question-3">Voir ses résultats</a></div>
-</nav>
+        </nav>
     </div>
-    <div class="titre"><h1>FAQ</h1></div>
+
+    <div class="titre"><h1>
+        FAQ
+    </h1></div>
+
     <div class="main-container">
         <div class="container-question">
             <h2 class="question" id="question-1">Créer un compte</h1>
