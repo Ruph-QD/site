@@ -3,11 +3,8 @@
 <head>
     <title>PHP Contact Form</title>
     <link rel="stylesheet" type="text/css" href="../style/Contact.css" />
+    <link rel="stylesheet" type="text/css" href="../style/Template.css" />
 </head>
-
-<header>
-  <?php include("./Component/Header.php"); ?>
-</header>
 
 <body>
     <div class="main-container">
@@ -53,9 +50,3 @@
             </form>
         </div>
     </div>
-
-    <footer>
-  <?php include("./Component/Footer.php"); ?>
-    </footer>
-
-</html>

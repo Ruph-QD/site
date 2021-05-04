@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -21,5 +20,3 @@
 <footer>
     <?php include("./Component/Footer.php"); ?>
 </footer>
-
-</html>

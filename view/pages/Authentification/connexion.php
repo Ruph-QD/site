@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../../style/loginstyle.css"/>
-        <link rel="stylesheet" href="../style/navbar.css" />
+        <link rel="stylesheet" href="../style/loginstyle.css"/>
+        <link rel="stylesheet" href="../style/Template.css" />
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
-  <header>
-  <?php include("./../../pages/Component/Header.php"); ?>
-  </header>
+
     <body>
 
     <?php

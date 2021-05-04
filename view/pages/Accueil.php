@@ -7,9 +7,6 @@
   <meta charset="utf-8" />
   <title>Runnest</title>
 </head>
-<header>
-  <?php include("./Component/Header.php"); ?>
-</header>
 
 <body>
   <div class="slideshow-container">
@@ -44,8 +41,5 @@
 
 <script type="text/javascript" src="../JavaScript/Accueil.js"></script>
 
-<footer>
-  <?php include("./Component/Footer.php"); ?>
-</footer>
 
 </html>
