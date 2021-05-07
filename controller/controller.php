@@ -21,3 +21,8 @@ function connexion() {
     require('./pages/Authentification/connexion.php');   
     require('./pages/Component/Footer.php');
 }
+
+function propos() {
+    require('./pages/Propos.php');   
+    require('./pages/Component/Footer.php');
+}
