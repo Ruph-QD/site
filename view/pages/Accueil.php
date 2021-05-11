@@ -11,6 +11,8 @@
 <body>
   <div class="slideshow-container">
 
+    <a class="prev" onclick="jumpSlide(false)">&#10094;</a>
+    
     <div class="slide fade">
       <img class="image" src="../assets/images/image_runner-1.png">
       <div class="text"></div>
@@ -26,15 +28,15 @@
       <div class="text"></div>
     </div>
 
-    <a class="prev" onclick="jumpSlide(false)">&#10094;</a>
     <a class="next" onclick="jumpSlide(true)">&#10095;</a>
+  
   </div>
   <br>
 
-  <div style="text-align:center">
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(0)"></span>
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
 </body>
