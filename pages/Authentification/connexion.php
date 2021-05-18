@@ -2,6 +2,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="../../style/loginstyle.css"/>
+        <link rel="stylesheet" href="../../style/Template.css" />
+
         <link rel="stylesheet" href="../style/navbar.css" />
         <meta charset="utf-8" />
         <title>Runnest</title>
@@ -43,7 +45,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
                         $userinfo=$requser->fetch();
                         $_SESSION['id']=$userinfo['id'];
                         $_SESSION['pseudo']=$userinfo['pseudo'];
-                        header('Location:profil.php?id='.$_SESSION['id']);
+                        header('Location:./../../pages/utilisateur.php?id='.$_SESSION['id']);
                         $erreur="tout va bien";
 
                     }else{
@@ -91,7 +93,7 @@ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
             <div class="right_aside"></div>
        </div>
     </body>
-	
+   
 	
 </html>
 

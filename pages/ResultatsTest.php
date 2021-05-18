@@ -2,7 +2,10 @@
 <html>
     <head>
         <title>Resultats</title>
+        <link rel="stylesheet" href="../style/Template.css" />
         <link rel="stylesheet" href="../style/ResultatsTestDesign.css" />
+   
+        <!-- <link rel="stylesheet" href="../style/ResultatsTestDesign.css" /> -->
         <script type="text/javascript" src="../style/Javascript/ResultatsTestJs.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
@@ -42,14 +45,17 @@
         </script>
     
     </head>
+    <header>
+    <?php include("./Component/Header.php"); ?>
+</header>
 <body>
    
-    <div class="container">
-        <h2> Programme d'evaluation du niveau de stresse et d'audition des athletes pour la saison 2</h2>
+    <div class="contenu">
+        <h2 style="text-align:center;"> Statistiques</h2>
 
         
         <div class="container-first">
-                <div class="reflexe" id="mesure_stresse">
+                <div class="reflexe" id="mesure_stresse" style="align:center;">
                     <table>
                         <caption>Récapitulatif des mesures du stresse</caption>
                         <thead>
@@ -75,10 +81,16 @@
                   
 
                 </div> 
-                 <div id="graphe1"></div> 
-
-        </div><br><br>
-        
+                
+           <div class="description">
+   <p>       Quaestione igitur per multiplices dilatata fortunas cum ambigerentur quaedam, non
+            nulla levius actitata constaret, post multorum clades Apollinares ambo pater et filius
+             in exilium acti cum ad locum Crateras nomine pervenissent, villam scilicet suam quae ab
+              Antiochia
+            vicensimo et quarto disiungitur lapide, ut mandatum est, fractis cruribus occiduntur.</p>
+           </div>
+        </div><br><br><br><br>
+        <div id="graphe1"></div> <br><br><br><br>
         <div class="container-second">
 
                 <div class="Audition" id="mesure_reflexe">
@@ -104,20 +116,29 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="graphe2"></div> 
+               
                 
                     
                   
-                    
+                <div class="description">
+                    <p>
+                Quaestione igitur per multiplices dilatata fortunas cum ambigerentur quaedam, non nulla levius 
+                actitata constaret, post multorum clades Apollinares ambo pater et filius in exilium acti cum ad locum Crateras nomine pervenissent, villam scilicet suam quae ab Antiochia vicensimo et
+                 quarto disiungitur lapide, ut mandatum est, fractis cruribus occiduntur.</p>
+           </div>
                 
-                    
+                 
                    
-                  </div>
-              
+                  </div><br><br><br><br>
+                  <div id="graphe2"></div> 
         </div>
        
     </div>
 
 	
 </body>
+
+<footer>
+    <?php include("./Component/Footer.php"); ?>
+</footer>
 </html>

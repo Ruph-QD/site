@@ -1,4 +1,20 @@
-<?php
+
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="../../style/enregistrement.css"/>
+        <link rel="stylesheet" href="../../style/Template.css" />
+
+        <link rel="stylesheet" href="../style/navbar.css" />
+        <meta charset="utf-8" />
+        <title>Runnest</title>
+    </head>
+  <header>
+  <?php include("./../../pages/Component/Header.php"); ?>
+  </header>
+    <body>
+    
+    <?php
 
 $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
 
@@ -65,18 +81,6 @@ $req->execute(array(
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="../../style/loginstyle.css"/>
-        
-        <meta charset="utf-8" />
-        <title>Runnest</title>
-    </head>
-  
-    <body>
-    
-    
        <div class="main">
            <div class="left_aside"></div>
            <div class="connect">
@@ -118,7 +122,7 @@ $req->execute(array(
             <div class="right_aside"></div>
        </div>
     </body>
-	
+    
 	
 </html>
 

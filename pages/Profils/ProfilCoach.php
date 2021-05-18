@@ -1,3 +1,18 @@
+<?php
+ session_start();
+ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
+ if(isset($_GET['id']) AND $_GET['id']>0 ){
+     
+    $getid=intval($_GET['id']);
+    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
+    $requser->execute(array(
+        $getid
+    
+        ));
+    $userinfo = $requser->fetch();
+ }
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,18 +21,29 @@
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
-    <header>
-        <?php include("../Component/Header.php"); ?>
-    </header>
+ 
     <body>
 
    
         <div class="profil">
         <div >
-        <a href="./../CreationProgramForm.php">creer un programme</a>
+      
     </div>
             <div class="title">
-                <h1><?php echo $userinfo['roleuser'] ; echo " "; echo $userinfo['pseudo'];?></h1>
+                <h1><?php
+                
+                $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
+                if(isset($_GET['id']) AND $_GET['id']>0 ){
+                    
+                   $getid=intval($_GET['id']);
+                   $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
+                   $requser->execute(array(
+                       $getid
+                   
+                       ));
+                   $userinfo = $requser->fetch();
+                }
+                echo $userinfo['roleuser'] ; echo " "; echo $userinfo['pseudo'];?></h1>
             </div>
             <div class="container">
                 <div class="profilPic">
@@ -51,8 +77,6 @@
             </div>
         </div>
     </body>
-	<footer>
-        <?php include("./Component/Footer.php"); ?>
-    </footer>
+
 	
 </html>

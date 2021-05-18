@@ -2,9 +2,12 @@
 
 <head>
     <title>PHP Contact Form</title>
+    <link rel="stylesheet" href="../style/Template.css" />
     <link rel="stylesheet" type="text/css" href="../style/Contact.css" />
 </head>
-
+<header>
+    <?php include("./Component/Header.php"); ?>
+</header>
 <body>
     <div class="main-container">
         <div>

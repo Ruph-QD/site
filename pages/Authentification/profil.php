@@ -31,9 +31,9 @@ if(isset($_GET['id']) AND $_GET['id']>0 ){
            <div class="left_aside"></div>
            <div class="connect">
           
-            <form action="./connexion.php" method="post">
+            
            
-            <h1>Profil du <?php echo $userinfo['roleuser'] ; echo "    " ;echo $userinfo['pseudo'];
+             <?php 
              if($userinfo['roleuser']=='coureur'){
                 include("./../../pages/Profils/ProfilCoureur.php"); 
              }else{
@@ -41,7 +41,7 @@ if(isset($_GET['id']) AND $_GET['id']>0 ){
                     include("./../../pages/Profils/ProfilAdmin.php");  
                  }else{
                      if($userinfo['roleuser']=='coach'){
-                        include("./../../pages/Profils/ProfilCoach.php");   
+                        include("./../../pages/utilisateur.php");   
                      }
                  }
              }
@@ -52,7 +52,7 @@ if(isset($_GET['id']) AND $_GET['id']>0 ){
             email=  <?php echo $userinfo['email']; ?>
             
         
-            </form>
+        
             </div>
             <div class="right_aside"></div>
        </div>

@@ -2,7 +2,7 @@
 <html>
     <head>
 		<link rel="stylesheet" href="../style/Template.css" />
-        <link rel="stylesheet" href="../style/Body.css" />
+        
         <link rel="stylesheet" href="../style/CPF.css" />
         <meta charset="utf-8" />
         <title>Runnest</title>
@@ -13,6 +13,7 @@
     </header>
 
     <body>
+      <br/><br/><br/>
         <div class="wraper">
         <div class="AsideL section"></div>
         <div class="container section">
