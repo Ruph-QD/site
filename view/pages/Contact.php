@@ -37,7 +37,6 @@
                 </div>
                 <div>
                     <input type="submit" name="send" class="btn-submit" value="Envoyer" />
-
                 </div>
             </form>
         </div>
