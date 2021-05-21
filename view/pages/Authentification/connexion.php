@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD:pages/Authentification/connexion.php
         <link rel="stylesheet" href="../../style/loginstyle.css"/>
         <link rel="stylesheet" href="../../style/Template.css" />
 
         <link rel="stylesheet" href="../style/navbar.css" />
+=======
+        <link rel="stylesheet" href="../style/loginstyle.css"/>
+        <link rel="stylesheet" href="../style/Template.css" />
+>>>>>>> 6eb7a4bfe87bbbd14adfb109ddd233ce0a7692bd:view/pages/Authentification/connexion.php
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
-  <header>
-  <?php include("./../../pages/Component/Header.php"); ?>
-  </header>
+
     <body>
 
     <?php

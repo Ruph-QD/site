@@ -68,7 +68,7 @@
             </div>
             <div class="stats">
                 <h4>Mes Statistiques</h4>
-                <p>Observez vos statistiques <a href="./../ResultatsTest.php">ici</a></p>
+                <p>Observez vos statistiques <a href="">ici</a></p>
                 <button class="envoieProfil">Envoyer mon profil à un coach</button>
             </div>
         </div>

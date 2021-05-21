@@ -4,6 +4,8 @@
     <title>PHP Contact Form</title>
     <link rel="stylesheet" href="../style/Template.css" />
     <link rel="stylesheet" type="text/css" href="../style/Contact.css" />
+    <link rel="stylesheet" type="text/css" href="../style/Template.css" />
+    <script type="text/javascript" src="../JavaScript/ValidateMail.js"></script>
 </head>
 <header>
     <?php include("./Component/Header.php"); ?>
@@ -14,7 +16,7 @@
             <h2 class=titre"> Contact </h2>
         </div>
         <div class="form-container">
-            <form name="formContact" method="post" enctype="multipart/form-data" onsubmit="return validateContactForm()">
+            <form name="formContact" action="../controller/mail_handler.php" method="post" onsubmit="return validateContactForm()">
 
                 <div class="input-row">
                     <label>Name</label>
@@ -38,16 +40,6 @@
                 </div>
                 <div>
                     <input type="submit" name="send" class="btn-submit" value="Envoyer" />
-
-                    <div id="statusMessage">
-                        <?php
-                        if (!empty($message)) {
-                        ?>
-                            <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
-                        <?php
-                        }
-                        ?>
-                    </div>
                 </div>
             </form>
         </div>
