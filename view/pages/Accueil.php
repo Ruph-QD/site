@@ -9,22 +9,23 @@
 </head>
 
 <body>
-  <div class="slideshow-container">
+
+ <div class="slideshow-container">
 
     <a class="prev" onclick="jumpSlide(false)">&#10094;</a>
     
     <div class="slide fade">
-      <img class="image" src="../assets/images/image_runner-1.png">
+      <img class="image" src="../assets/images/slide1.png">
       <div class="text"></div>
     </div>
 
     <div class="slide fade">
-      <img class="image" src="../assets/images/image_runner-2.png">
+      <img class="image" src="../assets/images/slide2.png">
       <div class="text"></div>
     </div>
 
     <div class="slide fade">
-      <img class="image" src="../assets/images/image_runner-3.png">
+      <img class="image" src="../assets/images/slide3.png">
       <div class="text"></div>
     </div>
 
@@ -37,7 +38,7 @@
     <span class="dot" onclick="currentSlide(0)"></span>
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
-  </div>
+  </div> 
 
 </body>
 

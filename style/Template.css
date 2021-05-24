@@ -6,7 +6,7 @@
     list-style: none;
     height: 4rem;
     align-items: center;
-    background-color: rgb(114, 172, 231);
+    background-color: rgb(165, 168, 172);
     margin-top: 0rem;
     padding-left: 0rem;
 }
@@ -41,9 +41,11 @@
     height: 5rem;
 }
 
-body {
-    background-color: lightblue;
-}
+body{
+    background: url("../assets/images/run.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Droid Serif', serif;
+  }
 
 .foot {
     display: flex;

@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="./style/navbar.css"/>
     </head>
     <body>
-   
+    <img  src="../assets/images/banniere.png" >
 <nav class="main-navigation">
     <!-- TODO: mettre les liens pour les pages -->
     <div><a href="./Accueil.php"><img class="logo-image logo-image-infinite" src="../assets/images/infinite-mesures.png"></a></div>

@@ -1,4 +1,5 @@
 <header>
+<img  src="../assets/images/banniere.png" style="width:100%; margin-top:0px;">
     <nav class="main-navigation">
         <div><a href="./"><img class="logo-image logo-image-infinite" src="../assets/images/infinite-mesures.png"></a></div>
         <div><a href="./" class="navigation-element">Forum</a></div>

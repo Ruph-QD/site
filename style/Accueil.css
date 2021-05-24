@@ -10,6 +10,9 @@
 }
 
 .slideshow-container {
+  display: grid;
+  grid-template-columns: max-content;
+  
   margin-top: 5rem;
   max-width: 31.25rem;
   margin-left: auto;
