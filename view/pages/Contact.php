@@ -7,13 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../style/Template.css" />
     <script type="text/javascript" src="../JavaScript/ValidateMail.js"></script>
 </head>
-<header>
-    <?php include("./Component/Header.php"); ?>
-</header>
+
 <body>
     <div class="main-container">
         <div>
-            <h2 class=titre"> Contact </h2>
+            <h2 class="titre"> Contact </h2>
         </div>
         <div class="form-container">
             <form name="formContact" action="../controller/mail_handler.php" method="post" onsubmit="return validateContactForm()">

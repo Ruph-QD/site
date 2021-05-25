@@ -10,7 +10,7 @@
         <title>Runnest</title>
     </head>
   <header>
-  <?php include("./../../pages/Component/Header.php"); ?>
+  <?php include("./../../pages/Component/newHeader.php"); ?>
   </header>
     <body>
     

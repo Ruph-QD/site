@@ -1,6 +1,6 @@
 <?php 
 
-require('./pages/Component/Header.php');
+require('./pages/Component/newHeader.php');
 
 function accueil() {
     require('./pages/Accueil.php');

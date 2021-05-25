@@ -6,7 +6,7 @@
 </head>
 
 <header>
-    <?php include("./Component/Header.php"); ?>
+    <?php include("./Component/newHeader.php"); ?>
 </header>
 
 <body> 

@@ -9,9 +9,7 @@
 </head>
 
 
-<header>
-    <?php include("./Component/Header.php"); ?>
-</header>
+
 
 <body>
     <div class="container-navigation">
