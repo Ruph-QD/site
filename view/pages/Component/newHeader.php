@@ -9,7 +9,7 @@
 <img  src="../assets/images/banniere.png" style="width:100%; margin-top:0px;">
   <div class="topnav" id="myTopnav">
     <div class="infinity"><a href="#home"><img class="image-logo" src="../assets/images/infinite-mesures.png"></a></div>
-    <div  class="nav"><a href="./" class="navigation-element">Forum</a></div>
+    <div  class="nav"><a href="./">Forum</a></div>
     <div class="nav"><a href="./?page=contact" >Contact</a></div>
     
     <div class="nav"><a href="./?page=faq">FAQ</a></div>
