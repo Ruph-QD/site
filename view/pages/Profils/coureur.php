@@ -15,16 +15,14 @@
     <div class="contenu">
         
         <div class="stats">
-        <a href="./../pages/ResultatsTest.php"><img class="image" src="../assets/images/statistiques.jpg" style="width:250px; height:200px;" /></a>
+        <a href= <?php echo "./?page=ResultatsTest&id=".$_SESSION['id']; ?>><img class="image" src="../assets/images/statistiques.jpg" style="width:250px; height:200px;" /></a>
            
     </div>
 
         <div class="team">
-       <a href="#"> <img class="image" src="../assets/images/team.png" style="width:250px; height:200px;" /></a>
         </div>
 
         <div class="recents">
-        <a href="#"><img class="image" src="../assets/images/recent.png" style="width:250px; height:200px;" /></a>
         </div>
 
     </div>
@@ -38,8 +36,5 @@
                    
                   
     </body>
-    <footer>
-        <?php include("./Component/Footer.php"); ?>
-    </footer>
 	
 </html>

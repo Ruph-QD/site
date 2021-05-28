@@ -20,8 +20,18 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Connexion</a>
-        <a href="#">Inscription</a>
+       <?php  if(isset($_SESSION['id'])){
+         ?>
+      <a href="./?page=deconnexion">Deconnexion</a>
+<?php
+ }else{
+?>
+      
+        <a href="./?page=connexion">Connexion</a>
+        <a href="?page=enregistrement">Inscription</a>
+        <?php
+        }
+        ?>
       </div>
     </div> 
   </div>

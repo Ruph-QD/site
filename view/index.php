@@ -16,6 +16,18 @@ if (isset($_GET['page'])) {
         case 'connexion':
             connexion();
             break;
+        case 'enregistrement':
+             enregistrement();
+             break;
+        case 'utilisateur':
+             utilisateur();
+                break;
+        case 'ResultatsTest':
+            statistiques();
+                break;
+        case 'deconnexion':
+            deconnexion();
+                break;
         case 'propos':
             propos();
             break;

@@ -12,6 +12,7 @@
 
 
 <body>
+    <br/><br/>
     <div class="container-navigation">
         <nav class="navigation">
             <div><a href="#question-1">Créer un compte</a></div>
@@ -52,8 +53,5 @@
 </body>
 
 
-<footer>
-    <?php include("./Component/Footer.php"); ?>
-</footer>
 
 </html>

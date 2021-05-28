@@ -1,10 +1,11 @@
 .main{
-    background-image: url("../assets/images/starting-block.jpg");
+    
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
 }
+
 .connect{
     margin-top: 30%;
     display: flex;
@@ -12,11 +13,13 @@
     justify-content: space-between;
     margin-bottom: 30%;
 }
+
 em{
     color: red;
 }
+
 fieldset{
-    background-color: cornflowerblue;
+    background-color: #0070b1;
     padding-left: 15%;
     justify-content: center;
     border-radius: 8px 8px 0px 0px ;

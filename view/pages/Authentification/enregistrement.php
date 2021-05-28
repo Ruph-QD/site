@@ -2,85 +2,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <link rel="stylesheet" href="../../style/enregistrement.css"/>
-        <link rel="stylesheet" href="../../style/Template.css" />
+        <link rel="stylesheet" href="./../../style/enregistrement.css"/>
+        <link rel="stylesheet" href="../../style/newTemplate.css" />
 
-        <link rel="stylesheet" href="../style/navbar.css" />
+    
         <meta charset="utf-8" />
         <title>Runnest</title>
     </head>
-  <header>
-  <?php include("./../../pages/Component/newHeader.php"); ?>
-  </header>
-    <body>
+  <style>
+      .main{
     
-    <?php
-
-$bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
-
-if(isset($_POST['formInscription'])){
-
-    $pseudo = htmlspecialchars($_POST['pseudo']);
-    $email = htmlspecialchars($_POST['email']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $password = sha1($_POST['password']);
-    $password_retype = sha1($_POST['password_retype']);
-    $role=htmlspecialchars($_POST['roleuser']);
-     echo "ok!";
-     if(!empty($_POST['pseudo'] AND $_POST['email'] AND $_POST['prenom'] AND $_POST['password'] AND $_POST['password_retype'])){
-
-
-        echo "ok!";
-        $pseudolength=strlen($pseudo);
-
-        if($pseudolength <= 255){
-
-            if($password==$password_retype){
-
-                if(filter_var($email,FILTER_VALIDATE_EMAIL)){
-                 
-                  
-                   
-                    $req = $bdd->prepare('INSERT INTO utilisateur(pseudo, mdpass,prenom,email,roleuser) VALUES(:pseudo, :mdpass,:prenom,:email, :roleuser)');
-$req->execute(array(
-	'pseudo' => $pseudo,
-	'mdpass' => $password,
-    'email' =>$email,
-    'prenom' => $prenom,
-    'roleuser' => $role
-
-	));
-
-
-    header('location:landing.php');
-                   
-                  
-  
-  
-               
-
-
-                }else{
-
-                    $erreur="votre adresse mail n'est pas valide!";
-                }
-            }else{
-
-                $erreur="Vos mots de passe ne correspondent pas!";
-            }
-
-        }else{
-
-            $erreur="Votre pseudo ne doit pas contenir plus de 255 caractères";
-        }
-     }else{
-
-        $erreur ="Tous les champs doivent être complétés!";
-
-     }
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
 }
 
-?>
+.connect{
+    margin-top: 10%;
+    display: flex;
+    
+    justify-content: space-between;
+    margin-bottom: 30%;
+}
+
+em{
+    color: red;
+}
+
+fieldset{
+    background-color: #0070b1;
+    padding-left: 15%;
+    justify-content: center;
+    border-radius: 8px 8px 0px 0px ;
+    border-color: 4px solid black;
+}
+
+      </style>
+    <body>
+    <?php include("./pages/Authentification/enregistrementTraitement.php"); ?>
+ 
        <div class="main">
            <div class="left_aside"></div>
            <div class="connect">

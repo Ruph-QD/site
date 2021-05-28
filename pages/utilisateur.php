@@ -1,9 +1,9 @@
 <?php
- session_start();
+
  $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
- if(isset($_GET['id']) AND $_GET['id']>0 ){
+ if(isset($_SESSION['id']) AND $_SESSION['id']>0 ){
      
-    $getid=intval($_GET['id']);
+    $getid=intval($_SESSION['id']);
     $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
     $requser->execute(array(
         $getid
@@ -22,11 +22,6 @@
     <meta charset="utf-8" />
     <title>Runnest</title>
 </head>
-
-
-<header>
-    <?php include("./Component/newHeader.php"); ?>
-</header>
 
 <body>
     <div class="container-navigation">
@@ -89,21 +84,16 @@
     
        if($userinfo['roleuser']=='coach'){
 
-        include("./../pages/Profils/coach.php");
+        require("./pages/Profils/coach.php");
        }else{
         if($userinfo['roleuser']=='coureur'){
-            include("./../pages/Profils/coureur.php");
+            require("./pages/Profils/coureur.php");
         }else{
-            include("./../pages/Profils/admin.php");
+            include("./pages/Profils/admin.php");
         }
        }
      ?>
     </div>
 </body>
-
-
-<footer>
-    <?php include("./Component/Footer.php"); ?>
-</footer>
 
 </html>
