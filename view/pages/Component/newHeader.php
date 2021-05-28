@@ -8,7 +8,7 @@
 <header>
 <img  src="../assets/images/banniere.png" style="width:100%; margin-top:0px;">
   <div class="topnav" id="myTopnav">
-    <div class="infinity"><a href="#home"><img class="image-logo" src="../assets/images/infinite-mesures.png"></a></div>
+    <div class="infinity"><a href="./"><img class="image-logo" src="../assets/images/infinite-mesures.png"></a></div>
     <div  class="nav"><a href="./">Forum</a></div>
     <div class="nav"><a href="./?page=contact" >Contact</a></div>
     
@@ -20,8 +20,8 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Connexion</a>
-        <a href="#">Inscription</a>
+        <a href="./Authentification/connexion.php">Connexion</a>
+        <a href="./Authentification/Enregistrement.php">Inscription</a>
       </div>
     </div> 
   </div>

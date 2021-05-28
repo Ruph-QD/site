@@ -7,9 +7,6 @@
     </head>
 
     <body>
-        <header>
-            <?php include("./Component/newHeader.php"); ?>
-        </header>
 
         <center><h1 class="mentions-legales">MENTIONS LEGALES</h1><br></center>
         
@@ -83,8 +80,5 @@
             Nous nous réservons le droit de modifier périodiquement cette page. Veuillez de ce fait lire régulièrement les présentes.
         </p>
 
-        <footer>
-            <?php include("./Component/Footer.php"); ?>
-        </footer>
     </body>
 </html>
