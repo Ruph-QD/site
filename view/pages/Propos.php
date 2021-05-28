@@ -10,7 +10,7 @@
 
 <body>
 <div class="titre"><h1>
-        FAQ
+      Qui sommes nous ?
     </h1></div>
 
   <div class="main-container">

@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+.mentions-legales {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    color: #00629f;
+}
+
+.titres {
+    font-weight: bold;
+    color: #00629f;
+}
+
+.paragraphes {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

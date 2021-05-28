@@ -11,7 +11,7 @@ function accueil() {
 }
 
 function faq() {
-    require('./pages/Faq.php');
+    require('./pages/faqs/faqs.php');
     require('./pages/Component/Footer.php');
 }
 function enregistrement() {
