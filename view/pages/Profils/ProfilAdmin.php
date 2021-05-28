@@ -1,6 +1,6 @@
 <?php
  session_start();
- $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
+ require('../controller/bdd-connect.php');
  if(isset($_GET['id']) AND $_GET['id']>0 ){
      
     $getid=intval($_GET['id']);

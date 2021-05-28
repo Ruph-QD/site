@@ -1,7 +1,8 @@
 <?php 
-  session_start();
-  session_save_path();
-  $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
+session_start();
+session_save_path();
+require('../controller/bdd-connect.php');
+
 
 require('./pages/Component/newHeader.php');
 
