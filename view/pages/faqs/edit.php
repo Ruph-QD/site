@@ -1,5 +1,5 @@
 <?php 
-$bdd= new PDO('mysql:host=localhost;dbname=testbdd','root',''); 
+require('../controller/bdd-connect.php');
 
 if ($_POST['create_faq']){
 
