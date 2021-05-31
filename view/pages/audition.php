@@ -39,7 +39,7 @@
     <div class="contenu">
       
  
-        <div id="graphe3" style="margin-left:7%;margin-right:7%; height: 500px;;"></div> 
+        <div id="graphe3" style="margin-left:7%;margin-right:7%; height: 500px;"></div> 
        
     </div>
 

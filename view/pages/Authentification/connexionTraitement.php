@@ -24,6 +24,10 @@ require('../controller/bdd-connect.php');
                         'mdpass' => $mdpass
                     
                         ));
+
+                    $reqalluser=$bdd->query('SELECT * FROM utilisateur');
+                    $reponse=$reqalluser->fetch(); 
+                    var_dump($reponse);   
                     $userexist=$requser->rowCount();
                     if($userexist==1){
                         

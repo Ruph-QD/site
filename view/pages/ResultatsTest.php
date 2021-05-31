@@ -8,7 +8,8 @@
     </head>
 
 <body>
-    <a href=<?php echo "./?page=utilisateur"; ?>>retour</a>
+    <a href=<?php echo "./?page=utilisateur"; ?>><img  src="../assets/images/retour.webp" style="width:3%;margin-left:7px; margin-top:30px;">
+</a>
 <h2 style="text-align:center;"> <?php echo $_GET['id'] ?></h2>
 
 <div class="stresse">
