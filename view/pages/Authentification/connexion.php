@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html>
 <?php include("./pages/Authentification/connexionTraitement.php"); ?>
-    <head>
-        <link rel="stylesheet" href="../style/loginstyle.css"/>
-        <link rel="stylesheet" href="../../style/newTemplate.css" />
 
-        
-        <meta charset="utf-8" />
-        <title>Runnest</title>
-    </head>
+<head>
+    <link rel="stylesheet" href="../style/loginstyle.css" />
+    <link rel="stylesheet" href="../style/Template.css" />
 
-    <body>
-    
-       <div class="main">
-           <div class="left_aside"></div>
-           <div class="connect">
-          
-            <form action="" method="post">
-            <fieldset>
-            <h1>Login</h1>
-              <label class="texte " for="ftitle">Email <em>*</em>:</label><br/>
-              <input type="email" id="logemail" name="email" placeholder="Email"><br/><br/>
-              <label class="texte " for="ftitle">Password <em>*</em>:</label>
-              <input type="password" id="logpassword" name="mdpass" placeholder="Password"><br/><br/>
-              <input type="submit" name="formConnect"/>
-              <input type="reset"/><br/><br/>
-              <?php
-                if(isset($erreur)){
-                    echo '<font color="red">'.$erreur.'</font><br/>';
-                }
-             ?>
-              <a href="recuperationCompte.php">Mot de passe oublié</a><br/><br/>
-              <a href="enregistrement.php">Creer un compte!</a>
-            </fieldset>
-            </form>
+
+    <meta charset="utf-8" />
+    <title>Runnest</title>
+</head>
+
+<body>
+
+    <div class="form_container">
+        <h2>Login</h2>
+        <form name="formLogin" action="" method="post">
+            <div class="container">
+                <input type="email" id="logemail" name="email" required>
+                <label id="label-email">Nom</label>
             </div>
-            <div class="right_aside"></div>
-       </div>
-    </body>
-   
-	
-</html>
+            <div class="container">
+                <input type="password" name="mdpass" id="logpassword" required>
+                <label id="label-password">Email</label>
+            </div>
 
+            <input type="submit" name="formConnect" class="btn-submit" value="Se Connecter" />
+            <input type="reset" class="btn-reset"/><br /><br />
+            <?php
+            if (isset($erreur)) {
+                echo '<font color="red">' . $erreur . '</font><br/>';
+            } ?><br/><br/>
+            <a href="recuperationCompte.php" class="link">Mot de passe oublié</a><br/><br/>
+            <a href="enregistrement.php" class="link">Creer un compte!</a>
+        </form>
+    </div>
+</body>
+
+
+</html>

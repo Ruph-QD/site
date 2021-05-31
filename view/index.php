@@ -17,19 +17,22 @@ if (isset($_GET['page'])) {
             connexion();
             break;
         case 'enregistrement':
-             enregistrement();
-             break;
+            enregistrement();
+            break;
         case 'utilisateur':
-             utilisateur();
-                break;
+            utilisateur();
+            break;
         case 'ResultatsTest':
             statistiques();
-                break;
+            break;
         case 'deconnexion':
             deconnexion();
-                break;
+            break;
         case 'propos':
             propos();
+            break;
+        case 'mention':
+            mention();
             break;
         default:
             accueil();

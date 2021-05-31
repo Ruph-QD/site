@@ -4,7 +4,7 @@ session_save_path();
 require('../controller/bdd-connect.php');
 
 
-require('./pages/Component/newHeader.php');
+require('./pages/Component/Header.php');
 
 function accueil() {
     require('./pages/Accueil.php');
@@ -26,7 +26,7 @@ function contact() {
 }
 
 function utilisateur() {
-    require('./../pages/utilisateur.php');
+    require('./pages/utilisateur.php');
     require('./pages/Component/Footer.php');
 }
 
@@ -46,5 +46,10 @@ function deconnexion() {
 
 function propos() {
     require('./pages/Propos.php');   
+    require('./pages/Component/Footer.php');
+}
+
+function mention() {
+    require('./pages/MentionsLegales.php');   
     require('./pages/Component/Footer.php');
 }
