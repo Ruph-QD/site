@@ -24,6 +24,10 @@ $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
                         'mdpass' => $mdpass
                     
                         ));
+
+                    $reqalluser=$bdd->query('SELECT * FROM utilisateur');
+                    $reponse=$reqalluser->fetch(); 
+                    var_dump($reponse);   
                     $userexist=$requser->rowCount();
                     if($userexist==1){
                         

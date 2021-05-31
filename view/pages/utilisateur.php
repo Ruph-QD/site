@@ -66,6 +66,9 @@ if(isset($_SESSION['id'])){?>
         if($userinfo['roleuser']=='coureur'){
             include("./../pages/Profils/coureur.php");
         }else{
+            ?>
+           
+            <?php
             include("./../pages/Profils/admin.php");
         }
        }
