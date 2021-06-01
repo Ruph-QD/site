@@ -50,7 +50,7 @@ function deconnexion() {
 
 function propos() {
     require('./pages/Component/Header.php');
-    require('./pages/Propos.php');   
+    require('./pages/aPropos.html');   
     require('./pages/Component/Footer.php');
 }
 
