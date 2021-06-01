@@ -34,6 +34,24 @@ if (isset($_GET['page'])) {
         case 'mention':
             mention();
             break;
+        case 'user':
+            user();
+            break;
+        case 'coureur':
+            coureur();
+            break;
+        case 'coach':
+            coach();
+            break;
+        case 'rechercheCoach':
+            rechercheCoach();
+            break;
+        case 'rechercheCoureur':
+            rechercheCoureur();
+            break;
+        case 'recuperation':
+            recuperation();
+            break;
         default:
             accueil();
     }

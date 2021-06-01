@@ -1,67 +1,88 @@
 <?php
+require('../controller/bdd-connect.php');
 session_start();
-if (isset($_SESSION['id'])) { ?>
-    <div class="container-navigation">
-        <nav class="navigation">
-            <?php
-            if ($userinfo['roleuser'] == 'coach') {
-            ?>
-                <span><img class="image" src="../assets/images/coachh.png" style="width:25%;height:20%; align:center;">
-                    <a href=<?php echo "./../pages/CreationProgramForm.php?id=" . $_SESSION['id'] ?> style="color:blue;"><b>Nouveau </b></a><br /><br /></span>
-                <span><img class="image" src="../assets/images/entrant.png" style="width:20%;height:15%; align:center;">
-                    <a href="#question-1" style=":hover{ font-size:20px;}"><b>Reçus</b></a><br /><br /></span>
-                <span><img class="image" src="../assets/images/sortant.png" style="width:20%;height:20%; align:center;">
-                    <a href="#question-1" style=":hover{ font-size:20px;}"><b>Envoyés</b></a><br /><br /></span>
-                <span><img class="image" src="../assets/images/team.png" style="width:20%;height:20%; align:center;">
-                    <a href="#question-1" style=":hover{ font-size:20px;}"><b>Equipes</b></a><br /><br /></span>
-                <span><img class="image" src="../assets/images/results.png" style="width:20%;height:20%; align:center;">
-                    <a href="#question-1" style=":hover{ font-size:20px;}"><b>Resultats</b></a><br /><br /></span>
-                <span><img class="image" src="../assets/images/parametre.png" style="width:25%;height:20%; align:center;">
-                    <a href=<?php echo "./../pages/Profils/ProfilCoach.php?id=" . $_SESSION['id'] ?> style="color:blue;"><b>Compte </b></a><br /><br /></span>
-                <?php
-            } else {
-                if ($userinfo['roleuser'] == 'coureur') {
-                ?>
-                    <span><img class="image" src="../assets/images/nouveau.png" style="width:25%;height:20%; align:center;">
-                        <a href="#question-1" style="color:blue;"><b>Nouveau test</b></a><br /><br /></span>
-                    <span><img class="image" src="../assets/images/entrant.png" style="width:20%;height:15%; align:center;">
-                        <a href="#question-1" style=":hover{ font-size:20px;}"><b>Reçus</b></a><br /><br /></span>
-                    <span><img class="image" src="../assets/images/sortant.png" style="width:20%;height:20%; align:center;">
-                        <a href="#question-1" style=":hover{ font-size:20px;}"><b>Envoyés</b></a><br /><br /></span>
-                    <span><img class="image" src="../assets/images/termine.png" style="width:20%;height:20%; align:center;">
-                        <a href="#question-1" style=":hover{ font-size:20px;}"><b>effectués</b></a><br /><br /></span>
-                    <span><img class="image" src="../assets/images/parametre.png" style="width:25%;height:20%; align:center;">
-                        <a href=<?php echo "./../pages/Profils/ProfilCoureur.php?id=" . $_SESSION['id'] ?> style="color:blue;"><b>Compte </b></a><br /><br /></span>
-            <?php
-                } else {
-                    echo '
-                    <a href="#question-1">Créer un compte</a><br /><br /><br /><br />
-                    <a href="#question-2">Parametrer les comptes</a><br /><br /><br />
-                    <span><img class="image" src="../assets/images/parametre.png" style="width:25%;height:20%; align:center;">
-                        <a href="./../pages/Profils/ProfilAdmin.php?id=' . $_SESSION['id'] . 'style="color:blue;"><b>Compte </b></a><br /><br /></span>
-                    ';
-                    require("./pages/Profils/ProfilAdmin.php");
-                }
-            }
-            ?>
-        </nav>
-    </div>
+if (isset($_SESSION['id'])) {
+    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
+    $requser->execute(array($_SESSION['id']));
+    $userinfo = $requser->fetch();
+?>
 
-    <div class="main-container">
+    <head>
+        <link rel="stylesheet" href="../style/Sidebar.css" />
+    </head>
+
+    <body>
+        <div class="sidebar-container">
+            <div class="sidebar-logo">
+                Infinite Mesures
+            </div>
+            <ul class="sidebar-navigation">
+                <li class="header">Navigation</li>
+                <li>
+                    <a href="./"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
+                </li>
+                <li>
+                    <a href="./?page=faq"><i class="fa fa-tachometer" aria-hidden="true"></i> FAQ</a>
+                </li>
+                <li>
+                    <a href="./?page=contact"><i class="fa fa-tachometer" aria-hidden="true"></i> Contact</a>
+                </li>
+                <li>
+                    <a href="./?page=propos"> <i class="fa fa-tachometer" aria-hidden="true"></i> A Propos</a>
+                </li>
+                <li>
+                    <a href=<?php echo './?page=utilisateur&id=' . $_SESSION["id"] ?>><i class="fa fa-tachometer" aria-hidden="true"></i> Mon compte</a>
+                </li>
+                <li>
+                    <a href="./?page=deconnexion""><i class=" fa fa-tachometer" aria-hidden="true"></i> Deconnexion</a>
+                </li>
+                <li class="header">Mes Paramètres </li>
+                <?php
+                switch ($userinfo['roleuser']) {
+                    case 'coach':
+                        echo '
+                            <li>
+                                <a href="./?page=coach"><i class="fa fa-users" aria-hidden="true"></i> Gérer mon équipe</a>
+                            </li>
+                            <li>
+                                <a href="./?page=rechercheCoureur"><i class="fa fa-users" aria-hidden="true"></i> Chercher un coureur</a>
+                            </li>
+                            ';
+                        break;
+
+                    case 'coureur':
+                        echo '
+                            <li>
+                                <a href="./?page=coureur"><i class="fa fa-users" aria-hidden="true"></i> Voir mes coach</a>
+                            </li>
+                            <li>
+                                <a href="./?page=rechercheCoach"><i class="fa fa-users" aria-hidden="true"></i> Chercher un coach</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Réaliser un test</a>
+                            </li>
+                            ';
+                        break;
+
+                    case 'admin':
+                        echo '
+                            <li>
+                                <a href="./?page=faq"><i class="fa fa-users" aria-hidden="true"></i> Gérer la FAQ</a>
+                            </li>
+                            <li>
+                                <a href="./?page=user"><i class="fa fa-users" aria-hidden="true"></i> Gérer les utilisateurs</a>
+                            </li>
+                            ';
+                        break;
+                }
+                ?>
+            </ul>
+        </div>
         <?php
-        switch ($userinfo['roleuser']) {
-            case 'coach':
-                require("./../pages/Profils/coach.php");
-                break;
-            case 'coureur':
-                include("./../pages/Profils/coureur.php");
-                break;
-            case 'admin':
-                include("./../pages/Profils/admin.php");
-                break;
-        }
+        require("./pages/Profils/ProfilAdmin.php");
         ?>
-    </div>
+
+    </body>
 <?php
 } else {
     header('Location:./');

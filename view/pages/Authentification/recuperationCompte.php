@@ -1,107 +1,62 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="../../style/loginstyle.css"/>
-        <link rel="stylesheet" href="../style/navbar.css" />
-        <meta charset="utf-8" />
-        <title>Runnest</title>
-    </head>
-  <header>
-  <?php include("./../../pages/Component/newHeader.php"); ?>
-  </header>
-    <body>
+<?php
+session_start();
+require('../controller/bdd-connect.php');
+?>
+
+<head>
+    <link rel="stylesheet" href="../style/loginstyle.css" />
+</head>
+
+<body>
 
     <?php
-    session_start();
-    
-$bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
-
-      if(isset($_POST['formrecuperer'])){
-
-      if(isset($_POST['email'])){
-
-          $email=htmlspecialchars($_POST['email']);
-     
-          if(!empty($_POST['email']) ){
-
-                if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-
-                 
-
-                    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE email= :email ');
+    if (isset($_POST['formrecuperer'])) {
+        if (isset($_POST['email'])) {
+            $email = htmlspecialchars($_POST['email']);
+            if (!empty($_POST['email'])) {
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $requser = $bdd->prepare('SELECT * FROM utilisateur WHERE email= :email ');
                     $requser->execute(array(
-                        'email' =>$email
-                    
-                        ));
-                    $userexist=$requser->rowCount();
-                    if($userexist==1){
-                        
-                        $userinfo=$requser->fetch();
-                        $_SESSION['id']=$userinfo['id'];
-                        $_SESSION['pseudo']=$userinfo['pseudo'];
-                        $_SESSION['email']=$userinfo['email'];
-                        $recup_code=" ";
-                        for($i=0;$i<8;$i++){
-                          $recup_code.=mt_rand(0,9);
+                        'email' => $email
+                    ));
+                    $userexist = $requser->rowCount();
+                    if ($userexist == 1) {
+                        $userinfo = $requser->fetch();
+                        $_SESSION['id'] = $userinfo['id'];
+                        $_SESSION['pseudo'] = $userinfo['pseudo'];
+                        $_SESSION['email'] = $userinfo['email'];
+                        $recup_code = "";
+                        for ($i = 0; $i < 8; $i++) {
+                            $recup_code .= mt_rand(0, 9);
                         }
-
-                        $_SESSION['recup_code']=$recup_code;
-
-                      
+                        $_SESSION['recup_code'] = $recup_code;
                         $recup_insert = $bdd->prepare('INSERT INTO recuperation(code, email) VALUES(:code, :email)');
                         $recup_insert->execute(array(
                             'code' => $recup_code,
-                            'email' =>$email
-                       
-                            ));
-                        
+                            'email' => $email
+                        ));
                         var_dump($recup_code);
-                       
                         
-
-                    }else{
-                        $erreur="l email fourni n'existe ne correspondent pas. Veuillez verifier!";
+                    } else {
+                        $erreur = "l email fourni n'existe ne correspondent pas. Veuillez verifier!";
                     }
-                    
-                }else{
-                    $erreur="veuillez entrer un email valide!";
+                } else {
+                    $erreur = "veuillez entrer un email valide!";
                 }
-
-          }else{
-
-            $erreur = "Tous les champs doivent être complétés!";
-          }
-        
-      }
-    }
-
-    ?>
-    
-    
-       <div class="main">
-           <div class="left_aside"></div>
-           <div class="connect">
-          
-            <form action="./recuperationCompte.php" method="post">
-            <fieldset>
-            <h1>Recuperation du mot de passe!</h1>
-              <label class="texte " for="ftitle">Email <em>*</em>:</label><br/>
-              <input type="email" id="logemail" name="email" placeholder="Email"><br/><br/>
-              <input type="submit" name="formrecuperer"/>
-              <input type="reset"/><br/><br/>
-              <?php
-                if(isset($erreur)){
-                    echo '<font color="red">'.$erreur.'</font><br/>';
-                }
-             ?>
-            
-            </fieldset>
-            </form>
+            } else {
+                $erreur = "Tous les champs doivent être complétés!";
+            }
+        }
+    } ?>
+    <div class="form_container">
+        <h2 class="titre">Recuperation du mot de passe!</h2>
+        <form name="formRecuperation" action="./page=recuperation" method="post">
+            <div class="container">
+                <input type="email" id="logemail" name="email" required>
+                <label id="label-email">Email</label>
             </div>
-            <div class="right_aside"></div>
-       </div>
-    </body>
-	
-	
-</html>
-
+            <input type="submit" name="formRecuperation" class="btn-submit" value="Soumettre" />
+            <input type="reset" class="btn-reset" /><br /><br />
+        </form>
+    </div>
+</body>
