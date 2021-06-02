@@ -108,11 +108,12 @@ body {
     margin-bottom: 0px;
     flex-direction: row;
     padding: 5% 48% 8% 8%;
+    width: 70%;
 }
 
 .texteGauche {
     text-align: center;
-    margin-right: 40px;
+    margin-left: 20rem;
     font-size: 55px;
     
 }

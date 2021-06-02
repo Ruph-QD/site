@@ -8,7 +8,7 @@
 <body>
     <div class="form_container">
         <h2 class=titre>Inscription</h2>
-        <form name="formLogin" action="" method="post">
+        <form name="formInscription" action="" method="post">
             <div class="container">
                 <input type="text" name="pseudo" required>
                 <label id="label-email">Pseudo</label>
@@ -35,7 +35,7 @@
                 <input type="password" name="password_retype" required>
                 <label id="label-email">Mot de passe</label>
             </div>
-            <input type="submit" name="formConnect" class="btn-submit" value="Se Connecter" />
+            <input type="submit" name="formInscription" class="btn-submit" value="S'inscrire'" />
             <input type="reset" class="btn-reset" /><br /><br />
             <a href="./?page=connexion" class="link">Vous avez déja un compte</a>
         </form>
