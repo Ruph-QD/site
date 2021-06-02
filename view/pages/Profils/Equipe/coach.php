@@ -52,7 +52,7 @@ require('../controller/bdd-connect.php');
             $groupes = $req->fetchAll();
             echo '<table class="table-groupe">
                     <thead><tr>
-                        <th>Coach</th>
+                        <th>Coureur</th>
                         <th>Pseudo</th>
                         <th></th>
                     </tr></thead>';
