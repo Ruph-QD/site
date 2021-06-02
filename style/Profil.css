@@ -182,3 +182,14 @@ td {
   object-fit: contain;
   height: 2rem;
 }
+
+.titre2 {
+  text-align: center;
+}
+
+.container4{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(49, 121, 180, 0.822);
+}

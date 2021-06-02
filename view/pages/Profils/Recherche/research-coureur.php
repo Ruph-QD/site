@@ -44,13 +44,47 @@ require('../controller/bdd-connect.php');
     </div>
     <div class="profil-container">
         <h3 class="titre">Rechercher un coureur</h3>
+        <div class="container4">
+            <div>
+                <h4 class=titre2>Recherche</h4>
+            </div>
+            <div>
+                <form action="./?page=rechercheCoureur" method="post">
+                    <span>Pseudo : <input type="text" name="pseudo" size="65" value="" /></span>
+                    <input type="submit" name="research-pseudo" value="Rechercher" />
+                </form>
+            </div>
+            <div>
+                <form action="./?page=rechercheCoureur" method="post">
+                    <span>Prenom : <input type="text" name="prenom" size="65" value="" /></span>
+                    <input type="submit" name="research-prenom" value="Rechercher" />
+                </form>
+            </div>
+        </div>
         <div class="container3">
             <?php
-            $req = $bdd->prepare('SELECT * FROM  utilisateur WHERE roleuser=:roleuser ');
             $role = 'coureur';
-            $req->bindParam(':roleuser', $role, PDO::PARAM_STR);
-            $req->execute();
-            $coureurs = $req->fetchAll();
+            if ($_POST['pseudo'] or $_POST['prenom']) {
+                if ($_POST['research-pseudo']) {
+                    $req = $bdd->prepare('SELECT * FROM utilisateur WHERE roleuser=:roleuser AND pseudo=:pseudo');
+                    $req->bindParam(':roleuser', $role, PDO::PARAM_STR);
+                    $req->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
+                    $req->execute();
+                    $coureurs = $req->fetchAll();
+                }
+                if ($_POST['research-prenom']) {
+                    $req = $bdd->prepare('SELECT * FROM utilisateur WHERE roleuser=:roleuser AND prenom=:prenom');
+                    $req->bindParam(':roleuser', $role, PDO::PARAM_STR);
+                    $req->bindParam(':prenom', $_POST['prenom'], PDO::PARAM_STR);
+                    $req->execute();
+                    $coureurs = $req->fetchAll();
+                }
+            } else {
+                $req = $bdd->prepare('SELECT * FROM  utilisateur WHERE roleuser=:roleuser ');
+                $req->bindParam(':roleuser', $role, PDO::PARAM_STR);
+                $req->execute();
+                $coureurs = $req->fetchAll();
+            }
             echo '<table class="table-groupe">
                     <thead><tr>
                         <th>Coureur</th>
