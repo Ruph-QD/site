@@ -35,7 +35,7 @@
                 <input type="password" name="password_retype" required>
                 <label id="label-email">Mot de passe</label>
             </div>
-            <input type="submit" name="formInscription" class="btn-submit" value="S'inscrire'" />
+            <input type="submit" name="formInscription" class="btn-submit" value="S'inscrire" />
             <input type="reset" class="btn-reset" /><br /><br />
             <a href="./?page=connexion" class="link">Vous avez déja un compte</a>
         </form>
