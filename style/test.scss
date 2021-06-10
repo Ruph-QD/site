@@ -1,0 +1,261 @@
+// Credit: http://www.redbubble.com/people/crowmonster/works/15404869-owens-raptor-squad?grid_pos=4&p=sticker
+
+@import "breakpoint";
+@import "susy";
+
+@mixin breakpoint($point) {
+	@if $point == big {
+		@media screen and (min-width: 601px){@content;}
+	}	
+	@else if $point == small {
+		@media screen and (max-width: 600px){@content;}
+	}
+}
+
+// ===========================================
+// Base
+// ===========================================
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    line-height: 1.5;
+    text-size-adjust: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background: #c5d5cb;
+}
+
+.container {
+    box-sizing: content-box;
+    max-width: 60em; // 960px
+    margin: 0 auto 48px auto;  
+    padding: 12px;
+}
+
+.tabpanel__tab {
+    position: absolute; 
+    left: -10000px; 
+    top: auto; 
+    width: 1px; 
+    height: 1px; 
+    overflow: hidden;
+    
+	&:checked{
+		+ .tabpanel__tablabel {
+			background: #e3e0cf;
+            color: black;
+		}
+	}
+}
+    
+.tabpanel__tablabel {
+    flex: 0 1 auto;
+    padding: 12px;
+    background: #9fa8a3;
+    color: white;
+    font-weight: 700;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.tabpanel__panel {
+    display: none;
+    background: #e3e0cf;    
+    
+    > * {
+        &:first-child {
+            margin-top: 0;    
+        }
+        
+        &:last-child {
+            margin-bottom: 0;    
+        }
+    }
+    
+    > * + * {
+        margin-top: 24px;
+    }
+}
+
+#tabpanel__tab-1:checked ~ .tabpanel__panels #tabpanel__panel-1,
+#tabpanel__tab-2:checked ~ .tabpanel__panels #tabpanel__panel-2,
+#tabpanel__tab-3:checked ~ .tabpanel__panels #tabpanel__panel-3,
+#tabpanel__tab-4:checked ~ .tabpanel__panels #tabpanel__panel-4,
+#tabpanel__tab-5:checked ~ .tabpanel__panels #tabpanel__panel-5 {
+    display: block;
+    position: relative;
+	top: 0px;
+}
+
+.media__body {
+    > * {
+        margin: 0;    
+    }
+    
+    > p + p,
+    > p + h2 {
+        margin-top: 24px;
+    }
+}
+
+.media {
+    display: flex;
+    
+    @include breakpoint(small) {
+        flex-direction: column;
+        align-items: flex-start;
+        
+        .media__img {
+            margin: 0 auto;
+            
+            + .media__body {
+                margin: 12px 24px 24px 24px;
+            }
+        }
+    }
+    
+    @include breakpoint(big) {
+        align-items: flex-start;
+        
+        .media__img {
+            flex: 0 1 auto;
+            height: auto;
+            
+            + .media__body {
+                margin: 24px 105px 24px 18px;
+            }
+        }
+    }
+}
+
+.tabpanel {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    
+    @include breakpoint(small) {
+        flex-direction: column;
+        
+        .tabpanel__tablabel {
+            padding: 24px 36px;
+            
+            + .tabpanel__tab {
+                + .tabpanel__tablabel {
+                    margin-top: 6px;
+                }
+            }
+        }
+        
+        .tabpanel__tab {            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 1;
+                }
+            }
+            
+            &:not(:checked) {
+                + .tabpanel__tablabel {
+                    order: initial;
+                }
+            }
+        }
+        
+        #tabpanel__tab-1 {
+            + .tabpanel__tablabel {
+                order: 1;
+            }
+            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 1;
+                }
+            }
+        }
+        
+        #tabpanel__tab-2 {
+            + .tabpanel__tablabel {
+                order: 2;
+            }
+            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 2;
+                }
+            }
+        }
+        
+        #tabpanel__tab-3 {
+            + .tabpanel__tablabel {
+                order: 3;
+            }
+            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 3;
+                }
+            }
+        }
+        
+        #tabpanel__tab-4 {
+            + .tabpanel__tablabel {
+                order: 4;
+            }
+            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 4;
+                }
+            }
+        }
+        
+        #tabpanel__tab-5 {
+            + .tabpanel__tablabel {
+                order: 5;
+            }
+            
+            &:checked {
+                ~ .tabpanel__panels {
+                    order: 5;
+                }
+            }
+        }
+        
+        .tabpanel__panel {
+            padding: 0 12px 12px 12px;
+        }
+    }
+    
+    @include breakpoint(big) {
+        flex-direction: row;
+        
+        .tabpanel__tablabel {
+            flex: 0 1 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+            
+            + .tabpanel__tab {
+                + .tabpanel__tablabel {
+                    margin-left: 6px;
+                }
+            }
+        }
+        
+        .tabpanel__panel {
+            padding: 12px;
+        }
+        
+        .tabpanel__panels {
+            flex: 1 1 100%;
+        }
+    }
+}

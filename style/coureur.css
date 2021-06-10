@@ -1,0 +1,36 @@
+.contenu{
+   
+    display : grid;
+   grid-template-columns: 2fr 2fr 2fr ;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 500px;
+}
+.stats{
+    border: 2px solid burlywood;
+}
+.stats:hover{
+  
+   background-color: burlywood;
+   width:250px; 
+   height:210px;
+
+}
+.team{
+    border: 2px solid burlywood;
+}
+.team:hover{
+  
+   background-color: burlywood;
+   width:250px; 
+   height:210px;
+
+}
+.recents:hover{
+    border: 2px solid burlywood;
+    background-color: burlywood;
+    width:250px; 
+    height:210px;
+ 
+ }
+

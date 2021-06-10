@@ -1,0 +1,22 @@
+.container-first{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container-second{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#graphe1{
+    height: 400px;
+}
+
+#graphe2{
+    height: 400px;
+}
