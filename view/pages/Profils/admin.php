@@ -1,42 +1,4 @@
 <html>
-<head>
-<script type="text/javascript" >
-function edit_row(no)
-{
- document.getElementById("edit_button"+no).style.display="none";
- document.getElementById("save_button"+no).style.display="block";
-	
- var nom=document.getElementById("nom_row"+no);
- var prenom=document.getElementById("prenom_row"+no);
- var email=document.getElementById("email_row"+no);
- var role=document.getElementById("role_row"+no);
-	
- var nom_data=nom.innerHTML;
- var prenom_data=prenom.innerHTML;
- var email_data=email.innerHTML;
- var role_data=role.innerHTML;
-	
- nom.innerHTML="<input type='text' id='nom_text"+no+"' value='"+nom_data+"'>";
- prenom.innerHTML="<input type='text' id='prenom_text"+no+"' value='"+prenom_data+"'>";
- email.innerHTML="<input type='text' id='email_text"+no+"' value='"+email_data+"'>";
- role.innerHTML="<select id='role_text"+no+"' value='"+role_data+"'><option>Coach</option><option>Coureur</option><option>Admin</option></select>";
-}
-
-function save_row(no)
-{
- var nom_val=document.getElementById("nom_text"+no).value;
- var prenom_val=document.getElementById("prenom_text"+no).value;
- var email_val=document.getElementById("email_text"+no).value;
- var role_val=document.getElementById("role_text"+no).value;
-
- document.getElementById("nom_row"+no).innerHTML=nom_val;
- document.getElementById("prenom_row"+no).innerHTML=prenom_val;
- document.getElementById("email_row"+no).innerHTML=email_val;
- document.getElementById("role_row"+no).innerHTML=role_val;
-
- document.getElementById("edit_button"+no).style.display="block";
- document.getElementById("save_button"+no).style.display="none";
-}
 
 function delete_row(no)
 {

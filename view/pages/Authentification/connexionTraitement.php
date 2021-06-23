@@ -34,6 +34,7 @@ require('../controller/bdd-connect.php');
                         $userinfo=$requser->fetch();
                         $_SESSION['id']=$userinfo['id'];
                         $_SESSION['pseudo']=$userinfo['pseudo'];
+                        $_SESSION['role']='admin';
                         header('Location:./?page=utilisateur&id='.$_SESSION['id']);
                         $erreur="tout va bien";
 

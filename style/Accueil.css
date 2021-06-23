@@ -5,14 +5,16 @@
 .image {
   text-align: center;
   object-fit: contain;
+  height: 17rem;
   width: 31.25rem;
-  height: 20rem;
+  border: 0.8rem  1rem 0.8rem 1rem solid;
+  border-color: white;
+  border-radius: 1.2rem;
 }
 
 .slideshow-container {
   display: grid;
   grid-template-columns: max-content;
-  
   margin-top: 5rem;
   max-width: 31.25rem;
   margin-left: auto;

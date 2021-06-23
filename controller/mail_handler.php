@@ -37,8 +37,8 @@ if(isset($_POST['send'])){
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
         $mail->SMTPAuth = true;                                     // turn on SMTP authentication
         $mail->Send();
-        echo 'Message has been sent';
+        echo ("<script LANGUAGE='JavaScript'>window.location.href='../view';window.alert('Message has been sent');</script>");
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo ("<script LANGUAGE='JavaScript'>window.location.href='../view';window.alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>");
     }
 }

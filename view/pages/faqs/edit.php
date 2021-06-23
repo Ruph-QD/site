@@ -1,18 +1,23 @@
-<?php 
-require('../controller/bdd-connect.php');
+<?php
+require('../../../controller/bdd-connect.php');
 
-if ($_POST['create_faq']){
+if ($_POST['edit_faq']) {
 
-    $sql = "UPDATE faqs SET question=?, answer=? WHERE id=?";
-    $stmt= $pdo->prepare($sql);
-    $stmt->execute($_POST['question'],$_POST['answer'],$_GET['id']);
-    header("Location: faqs.php");
+    $sql = "UPDATE faqs SET questions= :question, answers= :answer WHERE id=:id";
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':question', $_POST['question'], PDO::PARAM_STR);
+    $stmt->bindParam(':answer', $_POST['answer'], PDO::PARAM_STR);
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    header("Location: ../../?page=faq");
     exit();
 }
-if($_POST['delete_faq']){
-    $sql = "DELETE FROM faqs WHERE id=?";
-    $stmt= $pdo->prepare($sql);
-    $stmt->execute($_GET['id']);
-    header("Location: faqs.php");
+if ($_POST['delete_faq']) {
+    $sql = "DELETE FROM faqs WHERE id=:id";
+    $stmt = $bdd->prepare($sql);
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    header("Location: ../../?page=faq");
     exit();
 }
+echo "error with form";

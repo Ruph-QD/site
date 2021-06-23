@@ -1,27 +1,98 @@
-.main{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-}
-
-.connect{
-    margin-top: 30%;
-    display: flex;
-    
-    justify-content: space-between;
-    margin-bottom: 30%;
-}
-
-em{
+em {
     color: red;
 }
 
-fieldset{
-    background-color: #0070b1;
-    padding-left: 15%;
-    justify-content: center;
-    border-radius: 8px 8px 0px 0px ;
-    border-color: 4px solid black;
+.form_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30rem;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.form_container h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.form_container .container {
+    position: relative;
+}
+
+.form_container .container input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.form_container .container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form_container .container input:focus~label,
+.form_container .container input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.btn-submit, .btn-reset {
+    width: 12rem;
+    border: 1px solid rgb(10, 50, 180);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn-submit:hover ,.btn-reset:hover{
+    background: rgba(20, 20, 20, .8);
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    transition: width 0.3s ease;
+}
+
+.link:hover:after {
+    left: 0;
+    width: 100%;
+    transition: width .3s ease;
 }

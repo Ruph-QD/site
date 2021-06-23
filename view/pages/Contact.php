@@ -1,5 +1,3 @@
-<html>
-
 <head>
     <title>PHP Contact Form</title>
     <link rel="stylesheet" href="../style/Template.css" />
@@ -9,36 +7,25 @@
 </head>
 
 <body>
-    <div class="main-container">
-        <div>
-            <h2 class="titre"> Contact </h2>
-        </div>
-        <div class="form-container">
-            <form name="formContact" action="../controller/mail_handler.php" method="post" onsubmit="return validateContactForm()">
-
-                <div class="input-row">
-                    <label>Name</label>
-                    <span class="info info-userName"></span><br />
-                    <input type="text" class="input-field" name="userName" id="userName" placeholder="Votre Nom" />
-                </div>
-                <div class="input-row">
-                    <label>Email</label>
-                    <span class="info info-userEmail"></span><br />
-                    <input type="text" class="input-field" name="userEmail" id="userEmail" placeholder="Votre adresse mail" />
-                </div>
-                <div class="input-row">
-                    <label>Subject</label>
-                    <span class="info info-subject"></span><br />
-                    <input type="text" class="input-field" name="subject" id="subject" placeholder="Votre message" />
-                </div>
-                <div class="input-row">
-                    <label>Message</label>
-                    <span class="info info-userMessage"></span><br />
-                    <textarea name="content" id="content" class="input-field" cols="60" rows="6" placeholder="Votre message"></textarea>
-                </div>
-                <div>
-                    <input type="submit" name="send" class="btn-submit" value="Envoyer" />
-                </div>
-            </form>
-        </div>
+    <div class="form_container">
+        <h2>Contact</h2>
+        <form name="formContact" action="../controller/mail_handler.php" method="post" onsubmit="return validateContactForm()">
+            <div class="container">
+                <input type="text" name="userName" id="userName" required>
+                <label id="label-name">Nom</label>
+            </div>
+            <div class="container">
+                <input type="text" name="userEmail" id="userEmail" required>
+                <label id="label-email">Email</label>
+            </div>
+            <div class="container">
+                <input type="text" name="subject" id="subject" required>
+                <label id="label-subject">Sujet</label>
+            </div>
+            <div class="container">
+                <textarea name="content" id="content" class="input-field" cols="60" rows="6" placeholder="Votre message"></textarea>
+            </div>
+            <input type="submit" name="send" class="btn-submit" value="Envoyer" />
+        </form>
     </div>
+</body>

@@ -1,70 +1,80 @@
 <?php
- session_start();
- require('../controller/bdd-connect.php');
- if(isset($_GET['id']) AND $_GET['id']>0 ){
-     
-    $getid=intval($_GET['id']);
+session_start();
+require('../controller/bdd-connect.php');
+if (isset($_GET['id']) and $_GET['id'] > 0) {
+
+    $getid = intval($_GET['id']);
     $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
-    $requser->execute(array(
-        $getid
-    
-        ));
+    $requser->execute(array($getid));
     $userinfo = $requser->fetch();
- }
+} ?>
 
-?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="../../style/Template.css" />
-        <link rel="stylesheet" href="../../style/Profil.css" />
-        <meta charset="utf-8" />
-        <title>Runnest</title>
-    </head>
+<head>
+    <link rel="stylesheet" href="../style/Profil.css" />
+</head>
 
-    <header>
-        <?php 
-        session_start();
-        $bdd= new PDO('mysql:host=localhost;dbname=testbdd','root','');
-        if(isset($_GET['id']) AND $_GET['id']>0 ){
-            
-           $getid=intval($_GET['id']);
-           $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
-           $requser->execute(array(
-               $getid
-           
-               ));
-           $userinfo = $requser->fetch();
-        }
-        include("../Component/Header.php"); ?>
-    </header>
-
-    <body>
-        <div class="profil">
-            <div class="title">
-                <h1><?php echo $userinfo['roleuser'] ; echo " "; echo $userinfo['pseudo'];?></h1>
-            </div>
+<body>
+    <div class="profil-container">
+        <h2 class="titre">Bienvenue <?php echo $userinfo['roleuser'] . " ";
+                                    echo $userinfo['pseudo']; ?></h2>
+        <div class="main-container">
             <div class="container">
-                <div class="profilPic">
-                    <img class="pic" src="https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg" alt="">
-                    <div>
-                    <input type="file" value="importer" name="photo"/>
-                    
-                    </div>
+                <?php
+                if ($userinfo['photo']) {
+                    echo '<img class="pic" src="' . $userinfo['photo'] . '" alt="">';
+                } else {
+                    echo '<img class="pic" src="https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg" alt="">';
+                }
+                echo '
+                <form name="formPicture" method="post" action="pages/Profils/profilChange.php?id=' . $_SESSION['id'] . '" enctype="multipart/form-data">
+                    <label class="label-pic" for="input-pic"><input type="file" name="input-pic" id="input-pic" accept="image/*">Sélectionner</label>
+                    <label for="submit"><input type="submit" value="" id="input-submit" name="formPicture"><span class="span span1"></span>
+                        <span class="span span2"></span>
+                        <span class="span span3"></span>
+                        <span class="span span4"></span>
+                        Confirmer</label>
+                </form>'; ?>
+            </div>
+            <div class="container2">
+                <div class="form_container">
+                    <form action="" method="post">
+                        <div class="mini-container">
+                            <input type="text" name="" id="pseudo" disabled>
+                            <label id="label-pseudo"><?php echo $userinfo['pseudo']; ?></label>
+                        </div>
+                        <div class="mini-container">
+                            <input type="text" name="" id="prenom" disabled>
+                            <label id="label-prenom"><?php echo $userinfo['prenom']; ?></label>
+                        </div>
+                        <div class="mini-container">
+                            <input type="text" name="" id="email" disabled>
+                            <label id="label-email"><?php echo $userinfo['email']; ?></label>
+                        </div>
+                    </form>
                 </div>
-                <div class="userInformations">
-                    <form action="/action_page.php">
-                     
-                    <label for="nom">
-                    <?php echo $userinfo['pseudo'] ;?></label><br>
-                   <label for="prenom"> <?php echo $userinfo['prenom'] ; ?></prenom><br>
-                   <label for="email"> <?php echo $userinfo['email'] ;?></label>
-                   <button class="button" >Editer</button>
-                   
+                <div class="form_container">
+                    <?php echo '
+                    <form action="pages/Profils/profilChange.php?id=' . $_SESSION['id'] . '" method="post">
+                        <div class="mini-container">
+                            <input type="text" name="pseudo" id="pseudo" required>
+                            <label id="label-pseudo">Pseudo</label>
+                        </div>
+                        <div class="mini-container">
+                            <input type="text" name="prenom" id="prenom" required>
+                            <label id="label-prenom">Prenom</label>
+                        </div>
+                        <div class="mini-container">
+                            <input type="text" name="email" id="email" required>
+                            <label id="label-email">Email</label>
+                        </div>
+
+                        <input type="submit" name="formUser" class="btn-submit" value="Modifier" />
+                    </form>'; ?>
                 </div>
             </div>
-        </div>
-    </body>
 
-	
-</html>
+
+        </div>
+    </div>
+
+</body>
