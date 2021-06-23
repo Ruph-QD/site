@@ -21,53 +21,35 @@ if(isset($_POST['formInscription'])){
                 if(filter_var($email,FILTER_VALIDATE_EMAIL)){
                     $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE email= :email');
                     $requser->execute(array(
-                        'email' =>$email
-                    
+                        'email' =>$email               
                         ));
-                    $userexist=$requser->rowCount();
-                 
+                    $userexist=$requser->rowCount();                
                  if($userexist>0){
-
                     $erreur="un compte existe deja avec ce mail.Veuilez vous connecter";
-                 }else{ 
-                   
-                    $req = $bdd->prepare('INSERT INTO utilisateur(pseudo, mdpass,prenom,email,roleuser) VALUES(:pseudo, :mdpass,:prenom,:email, :roleuser)');
-$req->execute(array(
-	'pseudo' => $pseudo,
-	'mdpass' => $password,
-    'email' =>$email,
-    'prenom' => $prenom,
-    'roleuser' => $role
-
-	));
-
-
-    header('location:landing.php');
-                   
-                  
-  
-  
-}
-
-
+                 }else{                    
+                    $req = $bdd->prepare('INSERT INTO utilisateur(pseudo, mdpass,prenom,email,roleuser, photo) VALUES(:pseudo, :mdpass,:prenom,:email, :roleuser, :photo)');
+                    $req->execute(array(
+                        'pseudo' => $pseudo,
+                        'mdpass' => $password,
+                        'email' =>$email,
+                        'prenom' => $prenom,
+                        'roleuser' => $role,
+                        'photo' => ""
+                        ));
+                        header('Location:./?page=connexion'); 
+                        exit();
+                    }
                 }else{
-
                     $erreur="votre adresse mail n'est pas valide!";
                 }
             }else{
-
                 $erreur="Vos mots de passe ne correspondent pas!";
             }
 
         }else{
-
             $erreur="Votre pseudo ne doit pas contenir plus de 255 caractères";
         }
      }else{
-
         $erreur ="Tous les champs doivent être complétés!";
-
      }
 }
-
-?>

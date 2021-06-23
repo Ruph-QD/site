@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="../style/TemplateAcceuil.css" />
   <link rel="stylesheet" href="../style/Accueil.css" />
   <meta charset="utf-8" />
   <title>Runnest</title>

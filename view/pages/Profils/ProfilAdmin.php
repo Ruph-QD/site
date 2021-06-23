@@ -23,9 +23,13 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                 if ($userinfo['photo']) {
                     echo '<img class="pic" src="' . $userinfo['photo'] . '" alt="">';
                 } else {
-                    echo '<img class="pic" src="https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg" alt="">';
+                    if ($userinfo['roleuser']=="coach"){
+                        echo '<img class="pic" src="../assets/images/coachh.png">';
+                    } else {
+                        echo '<img class="pic" src="https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg" alt="">';
+                    }
                 }
-                echo '
+                /*echo '
                 <form name="formPicture" method="post" action="pages/Profils/profilChange.php?id=' . $_SESSION['id'] . '" enctype="multipart/form-data">
                     <label class="label-pic" for="input-pic"><input type="file" name="input-pic" id="input-pic" accept="image/*">Sélectionner</label>
                     <label for="submit"><input type="submit" value="" id="input-submit" name="formPicture"><span class="span span1"></span>
@@ -33,7 +37,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
                         <span class="span span3"></span>
                         <span class="span span4"></span>
                         Confirmer</label>
-                </form>'; ?>
+                </form>'; */?>
             </div>
             <div class="container2">
                 <div class="form_container">
@@ -74,6 +78,41 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
             </div>
 
 
+            <div class="container3"><?php
+            if($userinfo['roleuser'] == 'coach'){
+                $req = $bdd->prepare('SELECT * FROM  groupe WHERE coach=:coach ');
+                $req->bindParam(':coach', $_SESSION['id'], PDO::PARAM_INT);
+                $req->execute();
+                $groupes = $req->fetchAll();
+                echo '<table class="table-groupe">
+                    <thead><tr>
+                        <th>Coureur</th>
+                        <th>Pseudo</th>
+                        <th>Statistiques</th>
+                    </tr></thead>';
+
+                foreach ($groupes as $groupe) {
+                    $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
+                    $requser->execute(array($groupe['coureur']));
+                    $coureur = $requser->fetch();
+                    echo '
+                        <tr class="tr-coureur">
+                            <td>
+                                '.$coureur['prenom'].'
+                            </td>
+                            <td>
+                                '.$coureur['pseudo'].'
+                            </td>
+                            <td>
+                                <a href="" class="stats">Statistiques</a>
+                            </td>
+                        </tr>
+                    ';
+                }
+                echo '</table>';
+            } 
+            ?>
+            <div>
         </div>
     </div>
 

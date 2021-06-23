@@ -1,0 +1,24 @@
+.spinning-circle {
+    animation-name: spinning-circle;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+  img {
+      width: 14rem;
+      height: 10rem;
+  }
+  @-webkit-keyframes spinning-circle {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
