@@ -52,6 +52,9 @@ if (isset($_GET['page'])) {
         case 'recuperation':
             recuperation();
             break;
+        case 'test':
+            test();
+            break;
         default:
             accueil();
     }

@@ -85,3 +85,7 @@ function recuperation() {
     require('./pages/Authentification/recuperationCompte.php');
     require('./pages/Component/Footer.php');
 }
+
+function test() {
+    require('./pages/Tests.php');
+}

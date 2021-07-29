@@ -59,7 +59,7 @@ if (isset($_SESSION['id'])) {
                                 <a href="./?page=rechercheCoach"><i class="fa fa-users" aria-hidden="true"></i> Chercher un coach</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Réaliser un test</a>
+                                <a href="./?page=test"><i class="fa fa-users" aria-hidden="true"></i> Réaliser un test</a>
                             </li>
                             ';
                         break;

@@ -1,6 +1,10 @@
 <?php
 session_start();
 require('../controller/bdd-connect.php');
+
+$requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
+$requser->execute(array($_SESSION['id']));
+$coureur = $requser->fetch();
 ?>
 
 <head>
@@ -45,49 +49,48 @@ require('../controller/bdd-connect.php');
             </li>
         </ul>
     </div>
+
     <div class="profil-container">
-        <h3 class="titre">Mes coach</h3>
+        <h3 class="titre">Réalisation de tests</h3>
+        <div><?php include("../controller/handle_integration.php"); ?></div>
         <div class="container3">
             <?php
-            $req = $bdd->prepare('SELECT * FROM  groupe WHERE coureur=:coureur ');
+            $req = $bdd->prepare('SELECT * FROM  tests WHERE coureur=:coureur ');
             $req->bindParam(':coureur', $_SESSION['id'], PDO::PARAM_INT);
             $req->execute();
-            $groupes = $req->fetchAll();
+            $tests = $req->fetchAll();
             echo '<table class="table-groupe">
                     <thead><tr>
-                        <th>Coach</th>
-                        <th>Pseudo</th>
-                        <th></th>
+                        <th>Coureur</th>
+                        <th>Action réalisée</th>
+                        <th>Date</th>
                     </tr></thead>';
 
-            foreach ($groupes as $groupe) {
-                $requser = $bdd->prepare('SELECT * FROM  utilisateur WHERE id= ? ');
-                $requser->execute(array($groupe['coach']));
-                $coach = $requser->fetch();
+            foreach ($tests as $test) {
                 echo '
                         <tr class="tr-coureur">
                             <td>
-                                ' . $coach['prenom'] . '
+                                ' . $coureur['pseudo'] . '
                             </td>
                             <td>
-                                ' . $coach['pseudo'] . '
+                                ' . $test['action'] . '
                             </td>
                             <td>
-                            <form action="pages/Profils/Equipe/delete.php?id=' . $groupe['id'] . '" method="post">
-                                <input type="submit" name="formDeleteCoureur" class="btn-submit" value="Supprimer" />
-                            </form>
+                                ' . $test['date'] . '
                             </td>
                         </tr>
                     ';
             }
-            if (!$groupes) {
-                echo "Vous n'avez pas de Coach pour le moment";
-            }
+            $_SESSION['lastAction'] = $tests[count($tests) - 1]['action'];
             echo '</table>';
             ?>
             <div>
             </div>
         </div>
+        <?php if (!$tests) {
+                echo "<br/>Aucunes actions réalisées ";
+            } 
+        ?>
     </div>
 
 </body>
